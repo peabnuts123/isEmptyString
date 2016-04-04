@@ -61,4 +61,8 @@ describe('isEmptyString', function() {
     it('returns true for a non-whitespace string', function() {
        assert.equal(isEmptyString("_"), true); 
     });
+    
+    it('returns true for a sparse but non-empty string', function() {
+       assert.equal(isEmptyString('                \t\t\t\t\t\r\r\r\r\r\r\n\n\n\xa0\xa0.\t\t\t\t            '), true); 
+    });
 });
