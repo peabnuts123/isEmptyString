@@ -1,6 +1,6 @@
 {
   "name": "is-nonempty-string",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check whether a variable is a string that is not empty",
   "main": "index.js",
   "scripts": {
