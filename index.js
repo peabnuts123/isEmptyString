@@ -6,6 +6,8 @@ module.exports = function isNonEmptyString(options) {
     };
     if (options === undefined) {
         options = {};
+    } else if (toString.call(options) !== '[object Object]') {
+        throw new Error('Invalid options supplied for isNonEmptyString. options must be an object');
     }
     if (options.direct === undefined) {
         options.direct = defaults.direct;

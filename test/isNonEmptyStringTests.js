@@ -162,5 +162,9 @@ describe('isEmptyString', function() {
         it('throws an error when specifying prototype as a non-boolean value', function() {
             assert.throws(createCallWithOptions({ prototype: 1 }), "Invalid option for isNonEmptyString, 'prototype' must be a boolean value");
         });
+        
+        it('throws an error when a non-object parameter is passed in', function() {
+           assert.throws(createCallWithOptions("hello!"), "Invalid options supplied for isNonEmptyString. Options must be an object"); 
+        });
     });
 });
