@@ -9,36 +9,36 @@ describe('isEmptyString', function() {
             assert.notEqual(typeof isEmptyString, 'undefined');
         }) 
         
-        it('returns false for empty string', function() {
-            assert.equal(isEmptyString(''), false);
+        it('returns true for empty string', function() {
+            assert.equal(isEmptyString(''), true);
         });
         
-        it('returns false for spaces', function() {
-            assert.equal(isEmptyString('      '), false); 
+        it('returns true for spaces', function() {
+            assert.equal(isEmptyString('      '), true); 
         });
         
-        it('returns false for tabs', function() {
-            assert.equal(isEmptyString('\t\t\t\t\t\t\t'), false);
+        it('returns true for tabs', function() {
+            assert.equal(isEmptyString('\t\t\t\t\t\t\t'), true);
         });
         
-        it('returns false for newline characters', function() {
-            assert.equal(isEmptyString('\r\n\r\n'), false); 
+        it('returns true for newline characters', function() {
+            assert.equal(isEmptyString('\r\n\r\n'), true); 
         });
         
-        it ('returns false for non-breaking space', function() {
-            assert.equal(isEmptyString('\xa0\xa0\xa0\xa0'), false);
+        it ('returns true for non-breaking space', function() {
+            assert.equal(isEmptyString('\xa0\xa0\xa0\xa0'), true);
         })
         
-        it('returns false for a mixed bag', function() {
-            assert.equal(isEmptyString('        \t\t\t\n\n\n \n\r\r \r\r \r\t \t\t\t    '), false); 
+        it('returns true for a mixed bag', function() {
+            assert.equal(isEmptyString('        \t\t\t\n\n\n \n\r\r \r\r \r\t \t\t\t    '), true); 
         });
         
-        it('returns false for null', function() {
-            assert.equal(isEmptyString(null), false);
+        it('returns true for null', function() {
+            assert.equal(isEmptyString(null), true);
         });
         
-        it('returns false for undefined', function() {
-            assert.equal(isEmptyString(undefined), false);
+        it('returns true for undefined', function() {
+            assert.equal(isEmptyString(undefined), true);
         });
         
         it('returns false for a NaN', function() {
@@ -61,46 +61,46 @@ describe('isEmptyString', function() {
             assert.equal(isEmptyString(true), false); 
         });
         
-        it('returns true for a non-whitespace string', function() {
-            assert.equal(isEmptyString("_"), true); 
+        it('returns false for a non-whitespace string', function() {
+            assert.equal(isEmptyString("_"), false); 
         });
         
-        it('returns true for a sparse but non-empty string', function() {
-            assert.equal(isEmptyString('                \t\t\t\t\t\r\r\r\r\r\r\n\n\n\xa0\xa0.\t\t\t\t            '), true); 
+        it('returns false for a sparse but non-empty string', function() {
+            assert.equal(isEmptyString('                \t\t\t\t\t\r\r\r\r\r\r\n\n\n\xa0\xa0.\t\t\t\t            '), false);
         });
     });
     
     describe('prototype mode', function() {
-        it('returns false for empty string', function() {
-            assert.equal(''.isNonEmpty(), false);
+        it('returns true for empty string', function() {
+            assert.equal(''.isEmpty(), true);
         });
         
-        it('returns false for spaces', function() {
-            assert.equal('      '.isNonEmpty(), false); 
+        it('returns true for spaces', function() {
+            assert.equal('      '.isEmpty(), true); 
         });
         
-        it('returns false for tabs', function() {
-            assert.equal('\t\t\t\t\t\t\t'.isNonEmpty(), false);
+        it('returns true for tabs', function() {
+            assert.equal('\t\t\t\t\t\t\t'.isEmpty(), true);
         });
         
-        it('returns false for newline characters', function() {
-            assert.equal('\r\n\r\n'.isNonEmpty(), false); 
+        it('returns true for newline characters', function() {
+            assert.equal('\r\n\r\n'.isEmpty(), true); 
         });
         
-        it ('returns false for non-breaking space', function() {
-            assert.equal('\xa0\xa0\xa0\xa0'.isNonEmpty(), false);
+        it ('returns true for non-breaking space', function() {
+            assert.equal('\xa0\xa0\xa0\xa0'.isEmpty(), true);
         })
         
-        it('returns false for a mixed bag', function() {
-            assert.equal('        \t\t\t\n\n\n \n\r\r \r\r \r\t \t\t\t    '.isNonEmpty(), false); 
+        it('returns true for a mixed bag', function() {
+            assert.equal('        \t\t\t\n\n\n \n\r\r \r\r \r\t \t\t\t    '.isEmpty(), true); 
         });
         
-        it('returns true for a non-whitespace string', function() {
-            assert.equal("_".isNonEmpty(), true); 
+        it('returns false for a non-whitespace string', function() {
+            assert.equal("_".isEmpty(), false); 
         });
         
-        it('returns true for a sparse but non-empty string', function() {
-            assert.equal('                \t\t\t\t\t\r\r\r\r\r\r\n\n\n\xa0\xa0.\t\t\t\t            '.isNonEmpty(), true); 
+        it('returns false for a sparse but non-empty string', function() {
+            assert.equal('                \t\t\t\t\t\r\r\r\r\r\r\n\n\n\xa0\xa0.\t\t\t\t            '.isEmpty(), false); 
         });
     });
     
@@ -144,27 +144,27 @@ describe('isEmptyString', function() {
         });
         
         it('throws an error when specifying direct AND prototype false', function() {
-            assert.throws(createCallWithOptions({ direct: false, prototype: false }), "Can't invoke is-nonempty-string with all modes disabled!");
+            assert.throws(createCallWithOptions({ direct: false, prototype: false }), "Can't invoke is-empty-string with all modes disabled!");
         });
         
         it('throws an error when specifying just direct false', function() {
-            assert.throws(createCallWithOptions({ direct: false }), "Can't invoke is-nonempty-string with all modes disabled!");
+            assert.throws(createCallWithOptions({ direct: false }), "Can't invoke is-empty-string with all modes disabled!");
         });
         
         it('throws an error when specifying an invalid parameter', function() {
-            assert.throws(createCallWithOptions({ notReal: true }), "Invalid option for isNonEmptyString:");
+            assert.throws(createCallWithOptions({ notReal: true }), "Invalid option for isEmptyString:");
         });
         
         it('throws an error when specifying direct as a non-boolean value', function() {
-            assert.throws(createCallWithOptions({ direct: 1 }), "Invalid option for isNonEmptyString, 'direct' must be a boolean value"); 
+            assert.throws(createCallWithOptions({ direct: 1 }), "Invalid option for isEmptyString, 'direct' must be a boolean value"); 
         });
         
         it('throws an error when specifying prototype as a non-boolean value', function() {
-            assert.throws(createCallWithOptions({ prototype: 1 }), "Invalid option for isNonEmptyString, 'prototype' must be a boolean value");
+            assert.throws(createCallWithOptions({ prototype: 1 }), "Invalid option for isEmptyString, 'prototype' must be a boolean value");
         });
         
         it('throws an error when a non-object parameter is passed in', function() {
-           assert.throws(createCallWithOptions("hello!"), "Invalid options supplied for isNonEmptyString. Options must be an object"); 
+           assert.throws(createCallWithOptions("hello!"), "Invalid options supplied for isEmptyString. Options must be an object"); 
         });
     });
 });

@@ -1,14 +1,14 @@
 {
-  "name": "is-nonempty-string",
+  "name": "is-empty-string",
   "version": "1.0.1",
-  "description": "Check whether a variable is a string that is not empty",
+  "description": "Check whether a variable is an empty or undefined string",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require blanket"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peabnuts123/is-nonempty-string.git"
+    "url": "git+https://github.com/peabnuts123/is-empty-string.git"
   },
   "keywords": [
     "string",
@@ -19,9 +19,9 @@
   "author": "Peabnuts123",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/peabnuts123/is-nonempty-string/issues"
+    "url": "https://github.com/peabnuts123/is-empty-string/issues"
   },
-  "homepage": "https://github.com/peabnuts123/is-nonempty-string#readme",
+  "homepage": "https://github.com/peabnuts123/is-empty-string#readme",
   "devDependencies": {
     "blanket": "^1.2.3",
     "mocha": "^2.4.5"

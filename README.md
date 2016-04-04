@@ -1,8 +1,8 @@
-# is-nonempty-string
+# is-empty-string
 
-Module to test whether an object is a string that contains one or more non-whitespace characters. 
+Module to test whether a variable is either undefined, null, or a string that contains only whitespace characters. 
 
-Will return false in any case where input is not a string, or contains only whitespace characters,
+Will return false in any case where input is not undefined, null, or a string that contains only whitespace characters,
 including spaces, tabs, non-breaking spaces, or newline characters.
 
 
@@ -10,40 +10,40 @@ including spaces, tabs, non-breaking spaces, or newline characters.
 
 Installation is easiest through npm:
 
-`npm install is-nonempty-string --save`
+`npm install is-empty-string --save`
 
 
 ## Usage
 
-**is-nonempty-string** can be easily included and used in two ways, depending on how you would like to use it.
+**is-empty-string** can be easily included and used in two ways, depending on how you would like to use it.
 
 Firstly, directly, as a reference:
 
 ```
-var isNonEmptyString = require('is-nonempty-string')();
+var isEmptyString = require('is-empty-string')();
 
-function isUserInputDefined(userInput) {
-    return isNonEmptyString(userInput);
+function isUserInputEmpty(userInput) {
+    return isEmptyString(userInput);
 }
 ```
 
 or as a decorator on `String.prototype`:
 
 ```
-require('is-nonempty-string')({ mode: 'prototype'});
+require('is-empty-string')({ mode: 'prototype'});
 
 
-function isUserInputDefined(userString) {
-    return userString.isNonEmpty();
+function isUserInputEmpty(userString) {
+    return userString.isEmpty();
 }   
 ```
 
 
 ## Full list of options
 
-`var direct = require('is-nonempty-string')(options)`
+`var direct = require('is-empty-string')(options)`
 
-*Call to the is-nonempty-string module function only returns a value if direct is specified as true*
+*Call to the is-empty-string module function only returns a value if direct is specified as true*
 
 
 Only 2 options are supported at this point:
