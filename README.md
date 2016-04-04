@@ -8,7 +8,9 @@ including spaces, tabs, non-breaking spaces, or newline characters.
 
 ## Installation
 
-_TODO_
+Installation is easiest through npm:
+
+`npm install is-nonempty-string --save`
 
 
 ## Usage
