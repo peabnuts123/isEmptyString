@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/peabnuts123/is-nonempty-string#readme",
   "devDependencies": {
+    "blanket": "^1.2.3",
     "mocha": "^2.4.5"
   }
 }
