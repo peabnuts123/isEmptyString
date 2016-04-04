@@ -41,7 +41,8 @@ function isUserInputDefined(userString) {
 
 Usage:
 
-*var direct = *require('is-nonempty-string')( *options* )
+`var direct = require('is-nonempty-string')(options)`
+*Call to the is-nonempty-string module function only returns a value if direct is specified as true*
 
 Only 2 options are supported at this point:
 
