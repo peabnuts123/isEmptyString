@@ -4,7 +4,7 @@
   "description": "Check whether a variable is a string that is not empty",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require blanket"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,10 @@
   "devDependencies": {
     "blanket": "^1.2.3",
     "mocha": "^2.4.5"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "index.js"
+    }
   }
 }

@@ -1,4 +1,4 @@
-    require('blanket');
+require('blanket');
 
 var assert = require('assert');
 var isEmptyString = require('../index.js')({ direct: true, prototype: true });
@@ -116,7 +116,7 @@ describe('isEmptyString', function() {
         });
         
         it('throws no error with no parameters', function() {
-            assert.doesNotThrow(createCallWithOptions({}));
+            assert.doesNotThrow(createCallWithOptions());
         });
         
         it('throws no error when specifying just direct true', function() {
