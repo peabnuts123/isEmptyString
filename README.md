@@ -1,6 +1,6 @@
 # is-nonempty-string
 
-npm module to test whether *any object* is a string that contains one or more non-whitespace characters. 
+Module to test whether an object is a string that contains one or more non-whitespace characters. 
 
 Will return false in any case where input is not a string, or contains only whitespace characters,
 including spaces, tabs, non-breaking spaces, or newline characters.
