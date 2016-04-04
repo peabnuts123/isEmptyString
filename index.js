@@ -1,15 +1,4 @@
-module.exports = function isEmptyString(input) {
-    if (input === void(0)) { 
-        //input is undefined
-        return true;
-    }
-    
-    if (input === null) {
-        //input is null
-        return true;
-    }
-    
-    //input is a string of only whitespace
+module.exports = function isNonEmptyString(input) {
     var isString = toString.call(input) === '[object String]'; 
-    return isString && input.trim().length === 0;
+    return isString && input.trim().length > 0;
 };
