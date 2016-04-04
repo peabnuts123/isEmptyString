@@ -1,0 +1,28 @@
+{
+  "name": "is-empty-string",
+  "version": "1.0.0",
+  "description": "Check whether a variable is a string that is empty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peabnuts123/is-empty-string.git"
+  },
+  "keywords": [
+    "string",
+    "empty",
+    "validate",
+    "validation",
+    "null",
+    "undefined",
+    "whitespace"
+  ],
+  "author": "Peabnuts123",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peabnuts123/is-empty-string/issues"
+  },
+  "homepage": "https://github.com/peabnuts123/is-empty-string#readme"
+}
